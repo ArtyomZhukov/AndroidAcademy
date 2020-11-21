@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="backgroundColor">#191926</color>
+    <color name="headerTextColor">#ECECEC</color>
+    <color name="accentTextColor">#FF3466</color>
+
+    <color name="storylineContentTextColor">#BFFFFFFF</color>
+    <color name="reviewsTextColor">#FF6D6D80</color>
+    <color name="backButtonColor">#7FFFFFFF</color>
+    <color name="shadowColor">#7F000000</color>
+
 </resources>

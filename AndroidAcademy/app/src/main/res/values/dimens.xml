@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="headerTextSize">40sp</dimen>
+    <dimen name="spaceLeftRight">16dp</dimen>
+    <dimen name="smallTextSize">12sp</dimen>
+    <dimen name="defaultTextSize">14sp</dimen>
+
+    <dimen name="shadowX">0</dimen>
+    <dimen name="shadowY">6</dimen>
+    <dimen name="shadowRadius">12</dimen>
+
+</resources>
