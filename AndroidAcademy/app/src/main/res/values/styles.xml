@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="CastMemberImage">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="layout_constraintDimensionRatio">1:1</item>
+        <item name="layout_constraintHorizontal_bias">0.5</item>
+    </style>
 
+    <style name="TextShadow">
+        <item name="android:shadowColor">@color/shadowColor</item>
+        <item name="android:shadowDx">@dimen/shadowX</item>
+        <item name="android:shadowDy">@dimen/shadowY</item>
+        <item name="android:shadowRadius">@dimen/shadowRadius</item>
+    </style>
+
+    <style name="EmptyStar">
+        <item name="android:layout_width">13.02dp</item>
+        <item name="android:layout_height">12dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:src">@drawable/ic_star_empty</item>
+    </style>
+
+    <style name="FullStar" parent="EmptyStar">
+        <item name="android:src">@drawable/ic_star_full</item>
     </style>
 
 </resources>

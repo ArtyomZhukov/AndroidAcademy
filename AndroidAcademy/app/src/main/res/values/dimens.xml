@@ -8,5 +8,6 @@
     <dimen name="shadowX">0</dimen>
     <dimen name="shadowY">6</dimen>
     <dimen name="shadowRadius">12</dimen>
+    <dimen name="bottomSpace">20dp</dimen>
 
 </resources>
