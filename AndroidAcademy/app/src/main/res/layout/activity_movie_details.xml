@@ -31,31 +31,6 @@
             app:layout_constraintGuide_end="@dimen/spaceLeftRight"
             tools:visibility="invisible" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/headerTopGuideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:visibility="invisible"
-            app:layout_constraintGuide_begin="44dp"
-            tools:visibility="invisible" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/headerBottomGuideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="84dp"
-            tools:visibility="invisible" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/contentTopGuideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="222dp"
-            tools:visibility="invisible" />
-
         <ImageView
             android:id="@+id/backgroundImage"
             android:layout_width="match_parent"
@@ -72,33 +47,37 @@
             android:src="@drawable/gradient_mask"
             app:layout_constraintBottom_toBottomOf="@id/backgroundImage" />
 
-        <ImageView
-            android:id="@+id/backIcon"
-            android:layout_width="6dp"
-            android:layout_height="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/headerBottomGuideline"
-            app:layout_constraintStart_toStartOf="@id/leftSideGuideline"
-            app:layout_constraintTop_toTopOf="@+id/headerTopGuideline"
-            app:srcCompat="@drawable/ic_back" />
-
         <TextView
-            android:id="@+id/textButtonBack"
+            android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="50dp"
+            android:drawablePadding="8dp"
+            android:paddingStart="0dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="6dp"
             android:text="@string/back"
             android:textColor="@color/backButtonColor"
             android:textSize="@dimen/smallTextSize"
-            app:layout_constraintBottom_toTopOf="@+id/headerBottomGuideline"
-            app:layout_constraintStart_toEndOf="@+id/backIcon"
-            app:layout_constraintTop_toTopOf="@+id/headerTopGuideline" />
+            app:drawableStartCompat="@drawable/ic_back"
+            app:layout_constraintStart_toEndOf="@+id/leftSideGuideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/backgroundImageBottomBaseline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/backgroundImage" />
 
         <ImageView
             android:id="@+id/pgBackground"
             android:layout_width="24dp"
             android:layout_height="24dp"
+            app:layout_constraintBottom_toTopOf="@id/movieNameText"
             app:layout_constraintStart_toStartOf="@+id/leftSideGuideline"
-            app:layout_constraintTop_toTopOf="@+id/contentTopGuideline"
             app:srcCompat="@drawable/pg_background"
             tools:ignore="ContentDescription" />
 
@@ -128,9 +107,9 @@
             android:textColor="@color/headerTextColor"
             android:textSize="@dimen/headerTextSize"
             android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/backgroundImageBottomBaseline"
             app:layout_constraintEnd_toStartOf="@+id/rightSideGuideline"
-            app:layout_constraintStart_toStartOf="@+id/leftSideGuideline"
-            app:layout_constraintTop_toBottomOf="@+id/pgBackground" />
+            app:layout_constraintStart_toStartOf="@+id/leftSideGuideline" />
 
         <TextView
             android:id="@+id/movieTagsText"
@@ -241,10 +220,8 @@
 
         <TextView
             android:id="@+id/castMember1Text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/CastMemberName"
             android:text="@string/robert_downey_jr"
-            android:textColor="@color/headerTextColor"
             app:layout_constraintEnd_toEndOf="@+id/castMember1Image"
             app:layout_constraintStart_toStartOf="@+id/castMember1Image"
             app:layout_constraintTop_toBottomOf="@+id/castMember1Image" />
@@ -259,10 +236,8 @@
 
         <TextView
             android:id="@+id/castMember2Text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/CastMemberName"
             android:text="@string/chris_evans"
-            android:textColor="@color/headerTextColor"
             app:layout_constraintEnd_toEndOf="@+id/castMember2Image"
             app:layout_constraintStart_toStartOf="@+id/castMember2Image"
             app:layout_constraintTop_toBottomOf="@+id/castMember2Image" />
@@ -277,10 +252,8 @@
 
         <TextView
             android:id="@+id/castMember3Text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/CastMemberName"
             android:text="@string/mark_ruffalo"
-            android:textColor="@color/headerTextColor"
             app:layout_constraintEnd_toEndOf="@+id/castMember3Image"
             app:layout_constraintStart_toStartOf="@+id/castMember3Image"
             app:layout_constraintTop_toBottomOf="@+id/castMember3Image" />
@@ -295,10 +268,8 @@
 
         <TextView
             android:id="@+id/castMember4Text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/CastMemberName"
             android:text="@string/chris_hemsworth"
-            android:textColor="@color/headerTextColor"
             app:layout_constraintEnd_toEndOf="@+id/castMember4Image"
             app:layout_constraintStart_toStartOf="@+id/castMember4Image"
             app:layout_constraintTop_toBottomOf="@+id/castMember4Image" />
