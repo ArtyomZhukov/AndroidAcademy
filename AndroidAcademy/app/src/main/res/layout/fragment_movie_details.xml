@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
-    tools:context=".MovieDetailsActivity">
+    android:background="@color/backgroundColor">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -60,7 +59,7 @@
             android:paddingBottom="6dp"
             android:text="@string/back"
             android:textColor="@color/backButtonColor"
-            android:textSize="@dimen/smallTextSize"
+            android:textSize="@dimen/mediumTextSize"
             app:drawableStartCompat="@drawable/ic_back"
             app:layout_constraintStart_toEndOf="@+id/leftSideGuideline"
             app:layout_constraintTop_toTopOf="parent" />
@@ -72,29 +71,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/backgroundImage" />
 
-        <ImageView
-            android:id="@+id/pgBackground"
+        <include
+            layout="@layout/pg_layout"
             android:layout_width="24dp"
             android:layout_height="24dp"
             app:layout_constraintBottom_toTopOf="@id/movieNameText"
-            app:layout_constraintStart_toStartOf="@+id/leftSideGuideline"
-            app:srcCompat="@drawable/pg_background"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:id="@+id/textPG"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:text="@string/pgText"
-            android:textColor="@color/white"
-            android:textSize="@dimen/smallTextSize"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/pgBackground"
-            app:layout_constraintEnd_toEndOf="@+id/pgBackground"
-            app:layout_constraintStart_toStartOf="@+id/pgBackground"
-            app:layout_constraintTop_toTopOf="@+id/pgBackground"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="@+id/leftSideGuideline" />
 
         <TextView
             android:id="@+id/movieNameText"
@@ -130,28 +112,28 @@
         <ImageView
             android:id="@+id/star2Image"
             style="@style/FullStar"
-            android:layout_marginStart="3.25dp"
+            android:layout_marginStart="3dp"
             app:layout_constraintStart_toEndOf="@+id/star1Image"
             app:layout_constraintTop_toBottomOf="@+id/movieTagsText" />
 
         <ImageView
             android:id="@+id/star3Image"
             style="@style/FullStar"
-            android:layout_marginStart="3.25dp"
+            android:layout_marginStart="3dp"
             app:layout_constraintStart_toEndOf="@+id/star2Image"
             app:layout_constraintTop_toBottomOf="@+id/movieTagsText" />
 
         <ImageView
             android:id="@+id/star4Image"
             style="@style/FullStar"
-            android:layout_marginStart="3.25dp"
+            android:layout_marginStart="3dp"
             app:layout_constraintStart_toEndOf="@+id/star3Image"
             app:layout_constraintTop_toBottomOf="@+id/movieTagsText" />
 
         <ImageView
             android:id="@+id/star5Image"
             style="@style/EmptyStar"
-            android:layout_marginStart="3.25dp"
+            android:layout_marginStart="3dp"
             app:layout_constraintStart_toEndOf="@+id/star4Image"
             app:layout_constraintTop_toBottomOf="@+id/movieTagsText" />
 

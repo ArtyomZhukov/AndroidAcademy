@@ -35,4 +35,14 @@
         <item name="android:src">@drawable/ic_star_full</item>
     </style>
 
+    <style name="EmptySmallStar">
+        <item name="android:layout_width">8dp</item>
+        <item name="android:layout_height">8dp</item>
+        <item name="android:src">@drawable/ic_star_empty</item>
+    </style>
+
+    <style name="FullSmallStar" parent="EmptySmallStar">
+        <item name="android:src">@drawable/ic_star_full</item>
+    </style>
+
 </resources>
