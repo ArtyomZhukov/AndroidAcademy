@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/moviesListFragment"
-        android:name="com.zhukovartemvl.androidacademy.screens.MoviesListFragment"
+        android:name="com.zhukovartemvl.androidacademy.ui.movies_list.MoviesListFragment"
         android:label="MoviesListFragment"
         tools:layout="@layout/fragment_movies_list">
 
@@ -19,8 +19,12 @@
 
     <fragment
         android:id="@+id/movieDetailsFragment"
-        android:name="com.zhukovartemvl.androidacademy.screens.MovieDetailsFragment"
+        android:name="com.zhukovartemvl.androidacademy.ui.movie_details.MovieDetailsFragment"
         android:label="MovieDetailsFragment"
-        tools:layout="@layout/fragment_movie_details" />
+        tools:layout="@layout/fragment_movie_details" >
+        <argument
+            android:name="movie"
+            app:argType="com.zhukovartemvl.androidacademy.data.model.Movie" />
+    </fragment>
 
 </navigation>

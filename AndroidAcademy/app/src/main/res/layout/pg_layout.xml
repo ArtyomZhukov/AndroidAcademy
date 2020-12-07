@@ -19,13 +19,13 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="@string/pgText"
         android:textColor="@color/white"
         android:textSize="@dimen/mediumTextSize"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/pgBackground"
         app:layout_constraintEnd_toEndOf="@+id/pgBackground"
         app:layout_constraintStart_toStartOf="@+id/pgBackground"
-        app:layout_constraintTop_toTopOf="@+id/pgBackground" />
+        app:layout_constraintTop_toTopOf="@+id/pgBackground"
+        tools:text="@string/pg_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

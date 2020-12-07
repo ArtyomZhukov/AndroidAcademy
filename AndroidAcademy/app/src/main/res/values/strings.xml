@@ -15,10 +15,17 @@
     <string name="mark_ruffalo">Mark Ruffalo</string>
     <string name="chris_hemsworth">Chris Hemsworth</string>
 
-    <string name="pgText">13+</string>
-    <string name="reviewsText">125 REVIEWS</string>
+    <string name="pg_text">13+</string>
+    <string name="reviews_text">125 REVIEWS</string>
     <string name="back">Back</string>
     <string name="movies_list">Movies list</string>
     <string name="sample_movie_duration">137 MIN</string>
+
+    <plurals name="reviews">
+        <item quantity="one">%d REVIEW</item>
+        <item quantity="other">%d REVIEWS</item>
+    </plurals>
+
+    <string name="minutes">%d MIN</string>
 
 </resources>

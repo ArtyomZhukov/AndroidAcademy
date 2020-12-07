@@ -72,14 +72,15 @@
             app:layout_constraintTop_toBottomOf="@id/backgroundImage" />
 
         <include
+            android:id="@+id/pg"
             layout="@layout/pg_layout"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            app:layout_constraintBottom_toTopOf="@id/movieNameText"
+            app:layout_constraintBottom_toTopOf="@id/name"
             app:layout_constraintStart_toStartOf="@+id/leftSideGuideline" />
 
         <TextView
-            android:id="@+id/movieNameText"
+            android:id="@+id/name"
             style="@style/TextShadow"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -94,64 +95,47 @@
             app:layout_constraintStart_toStartOf="@+id/leftSideGuideline" />
 
         <TextView
-            android:id="@+id/movieTagsText"
+            android:id="@+id/tags"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/action_adventure_fantasy"
             android:textColor="@color/accentTextColor"
             app:layout_constraintEnd_toStartOf="@+id/rightSideGuideline"
             app:layout_constraintStart_toStartOf="@+id/leftSideGuideline"
-            app:layout_constraintTop_toBottomOf="@id/movieNameText" />
+            app:layout_constraintTop_toBottomOf="@id/name" />
 
-        <ImageView
-            android:id="@+id/star1Image"
-            style="@style/FullStar"
+        <com.zhukovartemvl.androidacademy.ui.utils.RatingBarSvg
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:progressBackgroundTint="@color/starEmpty"
+            android:progressDrawable="@drawable/ratingbar_svg_selector"
+            android:progressTint="@color/starFull"
+            android:rating="3.5"
+            android:secondaryProgressTint="@color/starEmpty"
+            app:drawableHeight="12dp"
+            app:drawableWidth="12dp"
+            app:innerPadding="3dp"
+            app:layout_constraintBottom_toBottomOf="@id/reviews"
             app:layout_constraintStart_toStartOf="@+id/leftSideGuideline"
-            app:layout_constraintTop_toBottomOf="@+id/movieTagsText" />
-
-        <ImageView
-            android:id="@+id/star2Image"
-            style="@style/FullStar"
-            android:layout_marginStart="3dp"
-            app:layout_constraintStart_toEndOf="@+id/star1Image"
-            app:layout_constraintTop_toBottomOf="@+id/movieTagsText" />
-
-        <ImageView
-            android:id="@+id/star3Image"
-            style="@style/FullStar"
-            android:layout_marginStart="3dp"
-            app:layout_constraintStart_toEndOf="@+id/star2Image"
-            app:layout_constraintTop_toBottomOf="@+id/movieTagsText" />
-
-        <ImageView
-            android:id="@+id/star4Image"
-            style="@style/FullStar"
-            android:layout_marginStart="3dp"
-            app:layout_constraintStart_toEndOf="@+id/star3Image"
-            app:layout_constraintTop_toBottomOf="@+id/movieTagsText" />
-
-        <ImageView
-            android:id="@+id/star5Image"
-            style="@style/EmptyStar"
-            android:layout_marginStart="3dp"
-            app:layout_constraintStart_toEndOf="@+id/star4Image"
-            app:layout_constraintTop_toBottomOf="@+id/movieTagsText" />
+            app:layout_constraintTop_toTopOf="@id/reviews" />
 
         <TextView
-            android:id="@+id/reviewsText"
+            android:id="@+id/reviews"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
-            android:text="@string/reviewsText"
+            android:text="@string/reviews_text"
             android:textColor="@color/reviewsTextColor"
             android:textSize="@dimen/defaultTextSize"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/star5Image"
-            app:layout_constraintTop_toBottomOf="@+id/movieTagsText" />
+            app:layout_constraintStart_toEndOf="@id/rating"
+            app:layout_constraintTop_toBottomOf="@+id/tags" />
 
         <TextView
-            android:id="@+id/storylineHeaderText"
+            android:id="@+id/storylineHeader"
             style="@style/TextShadow"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -162,25 +146,23 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/rightSideGuideline"
             app:layout_constraintStart_toStartOf="@+id/leftSideGuideline"
-            app:layout_constraintTop_toBottomOf="@+id/reviewsText" />
+            app:layout_constraintTop_toBottomOf="@+id/reviews" />
 
         <TextView
-            android:id="@+id/storylineContentText"
+            android:id="@+id/storylineContent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="16dp"
             android:letterSpacing="0.05"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
             android:text="@string/storyline_content"
             android:textColor="@color/storylineContentTextColor"
             android:textSize="@dimen/defaultTextSize"
             app:layout_constraintEnd_toStartOf="@+id/rightSideGuideline"
             app:layout_constraintStart_toStartOf="@+id/leftSideGuideline"
-            app:layout_constraintTop_toBottomOf="@+id/storylineHeaderText" />
+            app:layout_constraintTop_toBottomOf="@+id/storylineHeader" />
 
         <TextView
-            android:id="@+id/castHeaderText"
+            android:id="@+id/castHeader"
             style="@style/TextShadow"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -190,71 +172,22 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/rightSideGuideline"
             app:layout_constraintStart_toStartOf="@+id/leftSideGuideline"
-            app:layout_constraintTop_toBottomOf="@+id/storylineContentText" />
+            app:layout_constraintTop_toBottomOf="@+id/storylineContent" />
 
-        <ImageView
-            android:id="@+id/castMember1Image"
-            style="@style/CastMemberImage"
-            android:src="@drawable/robert_downey_jr"
-            app:layout_constraintEnd_toStartOf="@+id/castMember2Image"
-            app:layout_constraintStart_toStartOf="@id/leftSideGuideline"
-            app:layout_constraintTop_toBottomOf="@id/castHeaderText" />
-
-        <TextView
-            android:id="@+id/castMember1Text"
-            style="@style/CastMemberName"
-            android:text="@string/robert_downey_jr"
-            app:layout_constraintEnd_toEndOf="@+id/castMember1Image"
-            app:layout_constraintStart_toStartOf="@+id/castMember1Image"
-            app:layout_constraintTop_toBottomOf="@+id/castMember1Image" />
-
-        <ImageView
-            android:id="@+id/castMember2Image"
-            style="@style/CastMemberImage"
-            android:src="@drawable/chris_evans"
-            app:layout_constraintEnd_toStartOf="@+id/castMember3Image"
-            app:layout_constraintStart_toEndOf="@+id/castMember1Image"
-            app:layout_constraintTop_toBottomOf="@id/castHeaderText" />
-
-        <TextView
-            android:id="@+id/castMember2Text"
-            style="@style/CastMemberName"
-            android:text="@string/chris_evans"
-            app:layout_constraintEnd_toEndOf="@+id/castMember2Image"
-            app:layout_constraintStart_toStartOf="@+id/castMember2Image"
-            app:layout_constraintTop_toBottomOf="@+id/castMember2Image" />
-
-        <ImageView
-            android:id="@+id/castMember3Image"
-            style="@style/CastMemberImage"
-            android:src="@drawable/mark_ruffalo"
-            app:layout_constraintEnd_toStartOf="@+id/castMember4Image"
-            app:layout_constraintStart_toEndOf="@+id/castMember2Image"
-            app:layout_constraintTop_toBottomOf="@id/castHeaderText" />
-
-        <TextView
-            android:id="@+id/castMember3Text"
-            style="@style/CastMemberName"
-            android:text="@string/mark_ruffalo"
-            app:layout_constraintEnd_toEndOf="@+id/castMember3Image"
-            app:layout_constraintStart_toStartOf="@+id/castMember3Image"
-            app:layout_constraintTop_toBottomOf="@+id/castMember3Image" />
-
-        <ImageView
-            android:id="@+id/castMember4Image"
-            style="@style/CastMemberImage"
-            android:src="@drawable/chris_hemsworth"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/actorsList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/rightSideGuideline"
-            app:layout_constraintStart_toEndOf="@+id/castMember3Image"
-            app:layout_constraintTop_toBottomOf="@id/castHeaderText" />
-
-        <TextView
-            android:id="@+id/castMember4Text"
-            style="@style/CastMemberName"
-            android:text="@string/chris_hemsworth"
-            app:layout_constraintEnd_toEndOf="@+id/castMember4Image"
-            app:layout_constraintStart_toStartOf="@+id/castMember4Image"
-            app:layout_constraintTop_toBottomOf="@+id/castMember4Image" />
+            app:layout_constraintStart_toStartOf="@+id/leftSideGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/castHeader"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_actor" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
