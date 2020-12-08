@@ -12,9 +12,18 @@
     <color name="headerTextColor">#ECECEC</color>
     <color name="accentTextColor">#FF3466</color>
 
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="movieDurationTextColor">#565665</color>
     <color name="storylineContentTextColor">#BFFFFFFF</color>
     <color name="reviewsTextColor">#FF6D6D80</color>
     <color name="backButtonColor">#7FFFFFFF</color>
     <color name="shadowColor">#7F000000</color>
+
+    <color name="starEmpty">#6D6D80</color>
+    <color name="starFull">#FF3365</color>
+
+    <color name="likeEnabled">#FF3365</color>
+    <color name="likeDisabled">#BFFFFFFF</color>
 
 </resources>

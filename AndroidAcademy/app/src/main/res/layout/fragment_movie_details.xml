@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/bottomSpace"
+        tools:ignore="ContentDescription">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftSideGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            app:layout_constraintGuide_begin="@dimen/spaceLeftRight"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightSideGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            app:layout_constraintGuide_end="@dimen/spaceLeftRight"
+            tools:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/backgroundImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avengers_end_game_bg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/gradientMaskImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/gradient_mask"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundImage" />
+
+        <TextView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="50dp"
+            android:drawablePadding="8dp"
+            android:paddingStart="0dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="6dp"
+            android:text="@string/back"
+            android:textColor="@color/backButtonColor"
+            android:textSize="@dimen/mediumTextSize"
+            app:drawableStartCompat="@drawable/ic_back"
+            app:layout_constraintStart_toEndOf="@+id/leftSideGuideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/backgroundImageBottomBaseline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/backgroundImage" />
+
+        <include
+            android:id="@+id/pg"
+            layout="@layout/pg_layout"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toTopOf="@id/name"
+            app:layout_constraintStart_toStartOf="@+id/leftSideGuideline" />
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/TextShadow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:singleLine="false"
+            android:text="@string/avengers_end_game"
+            android:textColor="@color/headerTextColor"
+            android:textSize="@dimen/headerTextSize"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/backgroundImageBottomBaseline"
+            app:layout_constraintEnd_toStartOf="@+id/rightSideGuideline"
+            app:layout_constraintStart_toStartOf="@+id/leftSideGuideline" />
+
+        <TextView
+            android:id="@+id/tags"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/action_adventure_fantasy"
+            android:textColor="@color/accentTextColor"
+            app:layout_constraintEnd_toStartOf="@+id/rightSideGuideline"
+            app:layout_constraintStart_toStartOf="@+id/leftSideGuideline"
+            app:layout_constraintTop_toBottomOf="@id/name" />
+
+        <com.zhukovartemvl.androidacademy.ui.utils.RatingBarSvg
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:progressBackgroundTint="@color/starEmpty"
+            android:progressDrawable="@drawable/ratingbar_svg_selector"
+            android:progressTint="@color/starFull"
+            android:rating="3.5"
+            android:secondaryProgressTint="@color/starEmpty"
+            app:drawableHeight="12dp"
+            app:drawableWidth="12dp"
+            app:innerPadding="3dp"
+            app:layout_constraintBottom_toBottomOf="@id/reviews"
+            app:layout_constraintStart_toStartOf="@+id/leftSideGuideline"
+            app:layout_constraintTop_toTopOf="@id/reviews" />
+
+        <TextView
+            android:id="@+id/reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/reviews_text"
+            android:textColor="@color/reviewsTextColor"
+            android:textSize="@dimen/defaultTextSize"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/rating"
+            app:layout_constraintTop_toBottomOf="@+id/tags" />
+
+        <TextView
+            android:id="@+id/storylineHeader"
+            style="@style/TextShadow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/storyline"
+            android:textColor="@color/headerTextColor"
+            android:textSize="@dimen/defaultTextSize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/rightSideGuideline"
+            app:layout_constraintStart_toStartOf="@+id/leftSideGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/reviews" />
+
+        <TextView
+            android:id="@+id/storylineContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:letterSpacing="0.05"
+            android:text="@string/storyline_content"
+            android:textColor="@color/storylineContentTextColor"
+            android:textSize="@dimen/defaultTextSize"
+            app:layout_constraintEnd_toStartOf="@+id/rightSideGuideline"
+            app:layout_constraintStart_toStartOf="@+id/leftSideGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/storylineHeader" />
+
+        <TextView
+            android:id="@+id/castHeader"
+            style="@style/TextShadow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/cast"
+            android:textColor="@color/headerTextColor"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/rightSideGuideline"
+            app:layout_constraintStart_toStartOf="@+id/leftSideGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/storylineContent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/actorsList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/rightSideGuideline"
+            app:layout_constraintStart_toStartOf="@+id/leftSideGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/castHeader"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_actor" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
