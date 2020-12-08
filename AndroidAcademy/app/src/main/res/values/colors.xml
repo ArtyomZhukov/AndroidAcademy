@@ -12,6 +12,8 @@
     <color name="headerTextColor">#ECECEC</color>
     <color name="accentTextColor">#FF3466</color>
 
+    <color name="transparent">#00FFFFFF</color>
+
     <color name="movieDurationTextColor">#565665</color>
     <color name="storylineContentTextColor">#BFFFFFFF</color>
     <color name="reviewsTextColor">#FF6D6D80</color>

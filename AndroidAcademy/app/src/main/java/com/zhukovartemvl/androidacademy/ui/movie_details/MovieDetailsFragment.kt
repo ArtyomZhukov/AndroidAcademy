@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.zhukovartemvl.androidacademy.R
-import com.zhukovartemvl.androidacademy.data.mapper.toActorItem
-import com.zhukovartemvl.androidacademy.data.mapper.toMovieItem
+import com.zhukovartemvl.androidacademy.ui.utils.toActorItem
+import com.zhukovartemvl.androidacademy.ui.utils.toMovieItem
+import com.zhukovartemvl.androidacademy.data.repository.MovieRepository
 import com.zhukovartemvl.androidacademy.databinding.FragmentMovieDetailsBinding
 
 
@@ -35,12 +36,17 @@ class MovieDetailsFragment : Fragment() {
         val storyline = args.movie.storyline
         val actors = args.movie.actors.map { it.toActorItem() }.toMutableList()
 
-        with(binding) {
+        binding.apply {
             backButton.setOnClickListener { findNavController().popBackStack() }
             pg.textPG.text = movie.pg
             name.text = movie.name
             tags.text = movie.tags
-            rating.rating = movie.rating
+            rating.apply {
+                rating = movie.rating
+                setOnRatingBarChangeListener { _, rating, fromUser ->
+                    if (fromUser) MovieRepository.setRating(movie.id, rating)
+                }
+            }
             reviews.text = resources.getQuantityString(
                 R.plurals.reviews,
                 movie.reviewsCount,

@@ -4,13 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
+import coil.load
+import coil.transform.RoundedCornersTransformation
 import com.zhukovartemvl.androidacademy.R
 import com.zhukovartemvl.androidacademy.databinding.ItemActorBinding
+import com.zhukovartemvl.androidacademy.ui.model.ActorView
 
 
-class ActorsAdapter : ListAdapter<ActorItem, ActorsAdapter.ViewHolder>(ActorItemDiffCallback()) {
+class ActorsAdapter : ListAdapter<ActorView, ActorsAdapter.ViewHolder>(ActorItemDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -22,18 +23,15 @@ class ActorsAdapter : ListAdapter<ActorItem, ActorsAdapter.ViewHolder>(ActorItem
         holder.bind(getItem(position))
     }
 
-    class ViewHolder(private val binding: ItemActorBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: ActorItem) {
-            with(binding) {
+    class ViewHolder(private val view: ItemActorBinding) : RecyclerView.ViewHolder(view.root) {
+        fun bind(item: ActorView) {
+            view.apply {
+                image.load(item.imageURL) {
+                    placeholder(R.drawable.placeholder_actor)
+                    transformations(RoundedCornersTransformation(6.0f))
+                }
+
                 text.text = item.name
-                Glide.with(binding.root)
-                    .load(item.imageURL)
-                    .apply(
-                        RequestOptions()
-                            .placeholder(R.drawable.image_placeholder)
-                            .fallback(R.drawable.image_placeholder)
-                    ).into(image)
             }
         }
     }

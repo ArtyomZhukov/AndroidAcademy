@@ -1,8 +1,8 @@
-package com.zhukovartemvl.androidacademy.data.mapper
+package com.zhukovartemvl.androidacademy.ui.utils
 
 import com.zhukovartemvl.androidacademy.data.model.Actor
-import com.zhukovartemvl.androidacademy.ui.movie_details.ActorItem
+import com.zhukovartemvl.androidacademy.ui.model.ActorView
 
 
-fun Actor.toActorItem() = ActorItem(name, imageURL)
+fun Actor.toActorItem() = ActorView(name, imageURL)
 

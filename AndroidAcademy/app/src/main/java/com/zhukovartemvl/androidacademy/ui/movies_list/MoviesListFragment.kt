@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.zhukovartemvl.androidacademy.R
 import com.zhukovartemvl.androidacademy.data.repository.MovieRepository
-import com.zhukovartemvl.androidacademy.data.mapper.toMovieItem
+import com.zhukovartemvl.androidacademy.ui.utils.toMovieItem
 import com.zhukovartemvl.androidacademy.data.model.Movie
 import com.zhukovartemvl.androidacademy.databinding.FragmentMoviesListBinding
 
@@ -33,14 +33,19 @@ class MoviesListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.moviesList.adapter = adapter
         updateMoviesList()
-        adapter.attachCallback(object : MoviesAdapter.OnMovieClickListener {
-            override fun onMovieItemClick(movieId: Int) {
-                val movie = MovieRepository.getMovieById(movieId)
+        adapter.attachCallback(object : MoviesAdapter.MovieItemCallback {
+            override fun onClick(id: Int) {
+                val movie = MovieRepository.getMovieById(id)
                 movie?.let { openMovieDetails(movie) }
             }
 
-            override fun onLikeButtonClick(movieId: Int) {
-                MovieRepository.changeMovieLike(movieId)
+            override fun onChangeFavorite(id: Int, isFavorite: Boolean) {
+                MovieRepository.setFavorite(id, isFavorite)
+                updateMoviesList()
+            }
+
+            override fun onChangeRating(id: Int, rating: Float) {
+                MovieRepository.setRating(id, rating)
                 updateMoviesList()
             }
         })

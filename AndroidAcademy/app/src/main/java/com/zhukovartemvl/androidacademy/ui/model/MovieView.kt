@@ -1,7 +1,7 @@
-package com.zhukovartemvl.androidacademy.ui.movies_list
+package com.zhukovartemvl.androidacademy.ui.model
 
 
-data class MovieItem(
+data class MovieView(
     val id: Int,
     val name: String,
     val previewImageURL: String,
@@ -10,5 +10,5 @@ data class MovieItem(
     val durationMinutes: Int,
     val reviewsCount: Int,
     val pg: String,
-    var isLiked: Boolean = false
+    var isFavorite: Boolean = false
 )
